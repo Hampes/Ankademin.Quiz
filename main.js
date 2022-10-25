@@ -1,12 +1,12 @@
 const myQuiz = [
     {
-        question: "1+2",
-        a: "3",
-        b: "1",
-        correctAnswer: "3"
+        question: "Hur gammal är kungen?",
+        a: "85",
+        b: "76",
+        correctAnswer: "76"
     },
     {
-        question: "1+2",
+        question: "Vad är kungens fullständiga namn?",
         a: "2",
         b: "3",
         correctAnswer: "3"
@@ -53,10 +53,10 @@ const myQuiz = [
         correctAnswer: "4"
     },
     {
-        question: "1+1",
-        a: "2",
+        question: "3+6",
+        a: "9",
         b: "1",
-        correctAnswer: "2"
+        correctAnswer: "9",
     },
     {
         question: "3+6",
@@ -81,22 +81,23 @@ let hide = document.querySelector("#hide")
 let showScore = document.querySelector("#showScore")
 let counter = 0
 let score = 0
-document.body.style.background = "white";
+document.body.style.background = "lightcyan";
 
 
-// hide.style.display = "none"
+
 
 btnColorMode.addEventListener("click", () => {
-    if (document.body.style.background === "white") {
-        document.body.style.background = "black";
-        document.body.style.color = "white";
-        btnColorMode.innerText = "Light mode";
+    if (document.body.style.background === "lightcyan") {
+      document.body.style.background = "#06283D";
+      document.body.style.color = "white";
+      btnColorMode.innerText = "Light mode";
     } else {
-        document.body.style.background = "white";
-        document.body.style.color = "black";
-        btnColorMode.innerText = "Dark mode";
+      document.body.style.background = "lightcyan";
+      document.body.style.color = "black";
+      btnColorMode.innerText = "Dark mode";
     }
-});
+  });
+
 
 showQuestion.innerText = myQuiz[counter].question 
         label1.innerText = myQuiz[counter].a
@@ -114,7 +115,7 @@ nextQuestion.addEventListener("click", () => {
         // label2.innerText = myQuiz[counter].b
         // radio1.value = myQuiz[counter].a
         // radio2.value = myQuiz[counter].b
-        
+        nextQuestion.innerText = "Next question"
         
         if (radio1.value === myQuiz[counter].correctAnswer && radio1.checked) {
             counter++
@@ -124,21 +125,32 @@ nextQuestion.addEventListener("click", () => {
         label2.innerText = myQuiz[counter].b
         radio1.value = myQuiz[counter].a
         radio2.value = myQuiz[counter].b
-            nextQuestion.innerText = "Next question"
-            console.log(score + " 11")
+        console.log(score + " 11")
+        if (counter === 10) { 
+            hide.style.display = "none"
+            nextQuestion.innerText = "Visa svar"
+           }
+        // nextQuestion.innerText = "Next question"
             
         }
-        else if (radio2.value === myQuiz[counter].correctAnswer && radio2.checked) {
+
+        
+        if (radio2.value === myQuiz[counter].correctAnswer && radio2.checked) {
             counter++
             score++
             showQuestion.innerText = myQuiz[counter].question 
-        label1.innerText = myQuiz[counter].a
-        label2.innerText = myQuiz[counter].b
-        radio1.value = myQuiz[counter].a
-        radio2.value = myQuiz[counter].b
-            nextQuestion.innerText = "Next question"
+            label1.innerText = myQuiz[counter].a
+            label2.innerText = myQuiz[counter].b
+            radio1.value = myQuiz[counter].a
+            radio2.value = myQuiz[counter].b
+            if (counter === 10) { 
+                hide.style.display = "none"
+                nextQuestion.innerText = "Visa svar"
+               }
+            // nextQuestion.innerText = "Next question"
             console.log(score + " 22")
         }
+        
             
             // label1.innerText = myQuiz[counter].a
             // label2.innerText = myQuiz[counter].b
@@ -152,16 +164,26 @@ nextQuestion.addEventListener("click", () => {
         label2.innerText = myQuiz[counter].b
         radio1.value = myQuiz[counter].a
         radio2.value = myQuiz[counter].b
-            nextQuestion.innerText = "Next question"
+            // nextQuestion.innerText = "Next question"
             console.log("FEL")
+            if (counter === 10) { 
+                hide.style.display = "none"
+                nextQuestion.innerText = "Visa svar"
+               }
 
         }
         
+       
         
         
     }
+    
+    
+    
     else  {
-
+        
+        
+        
         
 
         if (score > 7) {
@@ -170,7 +192,7 @@ nextQuestion.addEventListener("click", () => {
           } else if (score >= 5) {
             showScore.style.color = "yellow";
            
-              shows.innerText = `Du blev godkänd och fick ${score} / 10`;
+              showScore.innerText = `Du blev godkänd och fick ${score} / 10`;
           } else if (score < 5) {
             showScore.style.color = "red";
             
@@ -184,17 +206,6 @@ nextQuestion.addEventListener("click", () => {
 
 
 
-// btnColorMode.addEventListener("click", () => {
-//     if (document.body.style.background === "lightcyan") {
-//       document.body.style.background = "#06283D";
-//       document.body.style.color = "white";
-//       btnColorMode.innerText = "Light mode";
-//     } else {
-//       document.body.style.background = "lightcyan";
-//       document.body.style.color = "black";
-//       btnColorMode.innerText = "Dark mode";
-//     }
-//   });
 
 
   
