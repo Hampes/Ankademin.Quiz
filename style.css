@@ -10,9 +10,22 @@ body {
     text-align: center;
     width: 400px;
     height: 200px;
-    
-    
+    border: solid;
+    position: relative;
     margin: auto;
     border-radius: 10px;
+    background: rgba(114, 117, 114, 0.3)
+    
+    
     
 }
+
+
+.btn{
+    
+    position: absolute;
+     bottom: 35px;
+     right: 180px;
+  
+
+   }

@@ -1,62 +1,62 @@
 const myQuiz = [
     {
-        question: "Hur gammal är kungen?",
-        a: "85",
-        b: "76",
-        correctAnswer: "76"
-    },
-    {
-        question: "Vad är kungens fullständiga namn?",
-        a: "2",
-        b: "3",
-        correctAnswer: "3"
-    },{
-        question: "1+5",
-        a: "6",
-        b: "1",
-        correctAnswer: "6"
-    },
-    {
-        question: "1+1",
-        a: "2",
-        b: "1",
-        correctAnswer: "2"
-    },
-    {
-        question: "1+1",
-        a: "2",
-        b: "1",
-        correctAnswer: "2"
-    },
-    {
-        question: "1+1",
-        a: "2",
-        b: "1",
-        correctAnswer: "2"
-    },
-    {
-        question: "1+1",
-        a: "2",
-        b: "1",
-        correctAnswer: "2"
-    },
-    {
-        question: "1+1",
-        a: "2",
-        b: "1",
-        correctAnswer: "2"
-    },
-    {
-        question: "2+2",
+        question: "Hur många öl konsumerar en genomsnttlig svensk i veckan?",
         a: "4",
-        b: "1",
-        correctAnswer: "4"
+        b: "6.5",
+        correctAnswer: "6.5"
     },
     {
-        question: "3+6",
-        a: "9",
-        b: "1",
-        correctAnswer: "9",
+        question: "Vad är gin smaksatt med?",
+        a: "Enbär",
+        b: "Äpple",
+        correctAnswer: "Enbär"
+    },{
+        question: "Vilket land producerar mest öl i världen?",
+        a: "Kina",
+        b: "Tyskland",
+        correctAnswer: "Kina"
+    },
+    {
+        question: "Var ligger vindistriktet Rioja?",
+        a: "Frankrike",
+        b: "Spanien",
+        correctAnswer: "Spanien"
+    },
+    {
+        question: "Vad tillverkas rom av?",
+        a: "Socker",
+        b: "Majs",
+        correctAnswer: "Socker"
+    },
+    {
+        question: "I vilket land dricker man mest öl per invånare?",
+        a: "England",
+        b: "Tjeckien",
+        correctAnswer: "Tjeckien"
+    },
+    {
+        question: "Vilket land producerar mest vin?",
+        a: "Kina",
+        b: "Frankrike",
+        correctAnswer: "Frankrike"
+    },
+    {
+        question: 'Vad står O.P i "O.P Anderson Aquavit" för?',
+        a: "Olof Peter",
+        b: "Ove Petter",
+        correctAnswer: "Olof Peter"
+    },
+    {
+        question: "Hur mycket ren sprit, 100%, dricker genomsnitt en vuxen svensk under ett år?",
+        a: "9 liter",
+        b: "12 liter",
+        correctAnswer: "9 liter"
+    },
+    {
+        question: "Vad heter jag?",
+        a: "Carl",
+        b: "Hampus",
+        correctAnswer: "Hampus",
     },
     {
         question: "3+6",
@@ -181,8 +181,6 @@ nextQuestion.addEventListener("click", () => {
     
     
     else  {
-        
-        
         
         
 
