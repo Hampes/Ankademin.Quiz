@@ -19,7 +19,7 @@ const myQuiz = [
   },
   {
     question: "Var ligger vindistriktet Rioja?",
-    a: "FPortugal",
+    a: "Portugal",
     b: "Spanien",
     correctAnswer: "Spanien",
   },
@@ -42,15 +42,16 @@ const myQuiz = [
     correctAnswer: "Frankrike",
   },
   {
-    question: 'Raki är en dryck, vad smaksätts den med?',
+    question: "Raki är en dryck, vad smaksätts den med?",
     a: "Anis",
     b: "Fänkolsfrön",
     correctAnswer: "Anis",
   },
   {
-    question: "Hur mycket ren sprit, 100%, dricker genomsnitt en vuxen svensk under ett år?",
+    question:
+      "Hur mycket ren sprit, 100%, dricker genomsnitt en vuxen svensk under ett år?",
     a: "18 liter",
-    b: "12 liter",
+    b: "9 liter",
     correctAnswer: "9 liter",
   },
   {
@@ -76,6 +77,7 @@ let showQuestion = document.querySelector("#showQuestion");
 let nextQuestion = document.querySelector("#nextQuestion");
 let hide = document.querySelector("#hide");
 let showScore = document.querySelector("#showScore");
+
 let counter = 0;
 let score = 0;
 document.body.style.background = "lightcyan";
@@ -102,7 +104,6 @@ btnColorMode.addEventListener("click", () => {
   }
 });
 
-
 // Värden för radiobuttons
 text();
 
@@ -112,9 +113,8 @@ nextQuestion.innerText = "Start";
 hide.style.display = "none";
 
 nextQuestion.addEventListener("click", () => {
-  
-// Är countern inte 10 så körs denna annars ner till else och skriver ut resultat
-    if (counter !== 10) {
+  // Är countern inte 10 så körs denna annars ner till else och skriver ut resultat
+  if (counter !== 10) {
     hide.style.display = "block";
     nextQuestion.innerText = "Nästa Fråga";
 
@@ -122,16 +122,22 @@ nextQuestion.addEventListener("click", () => {
       counter++;
       score++;
       text();
+      radio1.checked = false;
+      radio2.checked = false;
 
       if (counter === 10) {
         hide.style.display = "none";
         nextQuestion.innerText = "Svar";
       }
     } else if (
-      radio2.value === myQuiz[counter].correctAnswer && radio2.checked) {
+      radio2.value === myQuiz[counter].correctAnswer &&
+      radio2.checked
+    ) {
       counter++;
       score++;
       text();
+      radio1.checked = false;
+      radio2.checked = false;
       if (counter === 10) {
         hide.style.display = "none";
         nextQuestion.innerText = "Svar";
@@ -144,12 +150,14 @@ nextQuestion.addEventListener("click", () => {
     ) {
       counter++;
       text();
+      radio1.checked = false;
+      radio2.checked = false;
       if (counter === 10) {
         hide.style.display = "none";
         nextQuestion.innerText = "Svar";
       }
     }
-  } 
+  }
   // Skriver ut resultat
   else {
     nextQuestion.style.display = "none";
@@ -165,7 +173,6 @@ nextQuestion.addEventListener("click", () => {
     }
   }
 });
-
 
 // Värden för radiobuttons, samt fråga
 
