@@ -3,7 +3,6 @@ body {
 }
 
 #questionDiv {
-    
     text-align: center;
     width: 650px;
     height: 200px;
@@ -17,7 +16,6 @@ body {
 
 }
 
-
 .btn-holder {
     display: table-footer-group;
 }
@@ -27,5 +25,9 @@ body {
 }
 
 #btnColorMode {
+    padding: 10px 20px 10px 20px;
+}
+
+#btnRestart {
     padding: 10px 20px 10px 20px;
 }

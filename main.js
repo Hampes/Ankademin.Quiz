@@ -1,6 +1,6 @@
 const myQuiz = [
   {
-    question: "Hur många öl konsumerar en genomsnttlig svensk i veckan?",
+    question: "Hur många öl konsumerar en genomsnittlig svensk i veckan?",
     a: "10",
     b: "6.5",
     correctAnswer: "6.5",
@@ -77,6 +77,7 @@ let showQuestion = document.querySelector("#showQuestion");
 let nextQuestion = document.querySelector("#nextQuestion");
 let hide = document.querySelector("#hide");
 let showScore = document.querySelector("#showScore");
+let hideTitle = document.querySelector("#hideTitle")
 
 let counter = 0;
 let score = 0;
@@ -115,6 +116,7 @@ hide.style.display = "none";
 nextQuestion.addEventListener("click", () => {
   // Är countern inte 10 så körs denna annars ner till else och skriver ut resultat
   if (counter !== 10) {
+    hideTitle.style.display = "none"
     hide.style.display = "block";
     nextQuestion.innerText = "Nästa Fråga";
 
