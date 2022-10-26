@@ -1,7 +1,7 @@
 const myQuiz = [
   {
     question: "Hur många öl konsumerar en genomsnttlig svensk i veckan?",
-    a: "4",
+    a: "10",
     b: "6.5",
     correctAnswer: "6.5",
   },
@@ -19,7 +19,7 @@ const myQuiz = [
   },
   {
     question: "Var ligger vindistriktet Rioja?",
-    a: "Frankrike",
+    a: "FPortugal",
     b: "Spanien",
     correctAnswer: "Spanien",
   },
@@ -49,7 +49,7 @@ const myQuiz = [
   },
   {
     question: "Hur mycket ren sprit, 100%, dricker genomsnitt en vuxen svensk under ett år?",
-    a: "9 liter",
+    a: "18 liter",
     b: "12 liter",
     correctAnswer: "9 liter",
   },
@@ -60,10 +60,10 @@ const myQuiz = [
     correctAnswer: "Rester från vinproduktion",
   },
   {
-    question: "Vad heter jag?",
-    a: "Carl",
-    b: "Hampus",
-    correctAnswer: "Hampus",
+    question: "Grappa, en italiensk spritdtyck, vad tillverkas den av?",
+    a: "Vin som man tillsätter socker i och låter jäsa",
+    b: "Rester från vinproduktion",
+    correctAnswer: "Rester från vinproduktion",
   },
 ];
 
@@ -82,7 +82,7 @@ document.body.style.background = "lightcyan";
 btnColorMode.style.background = "lightcyan";
 btnColorMode.style.border = "solid";
 
-// Dark/Lightmode
+// Dark/Lightmode + lite styling
 
 btnColorMode.addEventListener("click", () => {
   if (document.body.style.background === "lightcyan") {
@@ -102,21 +102,26 @@ btnColorMode.addEventListener("click", () => {
   }
 });
 
+
+// Värden för radiobuttons
 text();
 
+// Byter text på knapp
 nextQuestion.innerText = "Start";
+// Döljer hide diven
 hide.style.display = "none";
 
 nextQuestion.addEventListener("click", () => {
-  if (counter !== 10) {
+  
+// Är countern inte 10 så körs denna annars ner till else och skriver ut resultat
+    if (counter !== 10) {
     hide.style.display = "block";
-    nextQuestion.innerText = "Nästa";
+    nextQuestion.innerText = "Nästa Fråga";
 
     if (radio1.value === myQuiz[counter].correctAnswer && radio1.checked) {
       counter++;
       score++;
       text();
-      console.log(score + " 11");
 
       if (counter === 10) {
         hide.style.display = "none";
@@ -144,7 +149,9 @@ nextQuestion.addEventListener("click", () => {
         nextQuestion.innerText = "Svar";
       }
     }
-  } else {
+  } 
+  // Skriver ut resultat
+  else {
     nextQuestion.style.display = "none";
     if (score > 7) {
       showScore.style.color = "green";
@@ -158,6 +165,9 @@ nextQuestion.addEventListener("click", () => {
     }
   }
 });
+
+
+// Värden för radiobuttons, samt fråga
 
 function text() {
   showQuestion.innerText = myQuiz[counter].question;
